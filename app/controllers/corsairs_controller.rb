@@ -1,0 +1,2 @@
+class CorsairsController < ApplicationController
+end

@@ -1,0 +1,25 @@
+<% if corsair_signed_in? %>
+  
+  <h1>Les rumeurs</h1>
+  <table>
+    <tr>
+      <th>Auteur</th>
+      <th>Rumeur</th>
+    </tr>
+    <% @gossips.each do |gossip| %>
+      <tr>
+        <td><%= link_to gossip.anonymous_author, gossip_path(gossip) %></td>
+        <td><%= gossip.content %></td>
+      </tr>
+    <% end %>
+  </table>
+  <button type="submit"><%= link_to 'Créer une rumeur', new_gossip_path %></button>
+
+<% else %>
+
+  <p> Hey l'ami, connecte-toi ou inscris-toi pour avoir accès aux gossips </p>
+
+  <%= link_to "connecte-toi", new_corsair_session_path  %>
+  <%= link_to "inscris-toi",  new_corsair_registration_path %>
+
+<% end %>

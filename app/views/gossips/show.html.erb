@@ -1,0 +1,10 @@
+<p>
+  <strong>Lanceur de rumeurs</strong>
+  <%= @gossip.anonymous_author %>
+</p>
+<p>
+  <strong>Rumeur</strong>
+  <%= @gossip.content %>
+</p>
+<%= link_to 'Editer', edit_gossip_path(@gossip) %> |
+<%= link_to 'Revenir aux rumeurs', gossips_path %>
